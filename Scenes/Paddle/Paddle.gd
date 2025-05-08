@@ -25,3 +25,6 @@ func _process(delta: float) -> void:
 		get_viewport_rect().position.x,
 		get_viewport_rect().end.x
 		)
+		
+func _on_area_entered(area: Area2D) -> void:
+	print("_on_area_entered from Paddle definition") # Replace with function body.

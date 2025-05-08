@@ -1,5 +1,7 @@
 extends Area2D
 
+
+
 const SPEED: float = 100.0
 
 
