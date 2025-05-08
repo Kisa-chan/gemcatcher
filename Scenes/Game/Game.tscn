@@ -15,10 +15,10 @@ texture = ExtResource("1_rdw05")
 position = Vector2(538, 602)
 
 [node name="Gem" parent="." instance=ExtResource("3_xbxml")]
-position = Vector2(581, 137)
+position = Vector2(581, 75)
 
 [node name="Gem2" parent="." instance=ExtResource("3_xbxml")]
-position = Vector2(847, 149)
+position = Vector2(848, 246)
 
 [node name="Gem3" parent="." instance=ExtResource("3_xbxml")]
 position = Vector2(310, 186)
