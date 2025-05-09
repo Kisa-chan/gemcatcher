@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfmgyv20sc7b2"]
+[gd_scene load_steps=4 format=3 uid="uid://dfmgyv20sc7b2"]
 
 [ext_resource type="Script" uid="uid://dmp8x5ooitpwn" path="res://Scenes/Game/Game.gd" id="1_ln2h6"]
 [ext_resource type="Texture2D" uid="uid://drqhrc0e4nly3" path="res://assets/GameBg.png" id="1_rdw05"]
 [ext_resource type="PackedScene" uid="uid://b1ajql2g8cvu1" path="res://Scenes/Paddle/Paddle.tscn" id="2_gwu2e"]
-[ext_resource type="PackedScene" uid="uid://cud06xn8f6sqh" path="res://Scenes/Gem/Gem.tscn" id="3_xbxml"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ln2h6")
@@ -16,13 +15,9 @@ texture = ExtResource("1_rdw05")
 [node name="Paddle" parent="." instance=ExtResource("2_gwu2e")]
 position = Vector2(538, 602)
 
-[node name="Gem" parent="." instance=ExtResource("3_xbxml")]
-position = Vector2(560, 82)
-
-[node name="Gem2" parent="." instance=ExtResource("3_xbxml")]
-position = Vector2(848, 246)
-
-[node name="Gem3" parent="." instance=ExtResource("3_xbxml")]
-position = Vector2(310, 186)
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [connection signal="area_entered" from="Paddle" to="." method="_on_paddle_area_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
