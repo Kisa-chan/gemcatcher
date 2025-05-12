@@ -19,6 +19,7 @@ position = Vector2(538, 602)
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
+autostart = true
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ln2h6")

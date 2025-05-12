@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Game
+
 const EXPLODE = preload("res://assets/explode.wav")
 const GEM = preload("res://Scenes/Gem/Gem.tscn")
 const MARGIN: float = 70.0
@@ -11,7 +13,10 @@ const MARGIN: float = 70.0
 @onready var score_label: Label = $ScoreLabel
 
 var _score: float = 0
-var _vp_r: Rect2
+static var _vp_r: Rect2
+
+static func get_vpr() -> Rect2:
+	return _vp_r
 
 func _ready() -> void:
 	update_vp()
