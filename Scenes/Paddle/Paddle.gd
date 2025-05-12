@@ -2,11 +2,11 @@ extends Area2D
 
 const SPEED: float = 360.0
 
+var _vp_r: Rect2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	_vp_r = get_viewport_rect()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -22,8 +22,8 @@ func _process(delta: float) -> void:
 	
 	position.x = clampf(
 		position.x,
-		get_viewport_rect().position.x,
-		get_viewport_rect().end.x
+		_vp_r.position.x,
+		_vp_r.end.x
 		)
 		
 func _on_area_entered(area: Area2D) -> void:
